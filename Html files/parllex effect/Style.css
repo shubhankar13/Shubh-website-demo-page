@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* General Table Styling */
+table {
+    width: 100%; /* Make the table take up the entire container width */
+    border-collapse: collapse; /* Collapse table borders into a single line */
+    margin: 20px 0; /* Add some space around the table */
+    font-family: Arial, sans-serif; /* Set the font for the table */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Styling for Table Headers */
+th {
+    background-color: #070105; /* Green background for the header */
+    color: rgb(250, 248, 248); /* White text color */
+    padding: 12px 15px; /* Add some padding for spacing */
+    text-align: left; /* Align header text to the left */
+    font-size: 1.1em; /* Slightly larger font for headers */
+}
+
+/* Styling for Table Data Cells */
+td {
+    border: 1px solid #050505; /* Light gray border for data cells */
+    padding: 10px 15px; /* Add some padding for spacing */
+    text-align: left; /* Align text to the left */
+}
+
+/* Hover Effect for Rows */
+tr:hover {
+    background-color: #faf9f9; /* Change background color when hovering over rows */
+}
+
+/* Styling the Table Borders */
+table, th, td {
+    border: 1px solid #070707; /* Light gray border for the table and cells */
+}
+
+/* Optional: Styling for table caption (if you have one) */
+caption {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Parallax Section Styling */
+.parallax-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(7, 7, 7);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Dark overlay for better text visibility */
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Content Box */
+.content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Social Media Logos */
+.content img {
+    width: 40px;  /* Limit logo width */
+    height: 30px; /* Maintain aspect ratio */
+    margin: 50px; /* Space around logos */
+    vertical-align: middle; /* Align logos properly */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.content img:hover {
+    transform: scale(1.1);
+}
+
+/* Social Media Links */
+.content a {
+    color: rgb(7, 7, 7);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Buttons */
+button {
+    background: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #cc7700;
+}
+img {
+    width: 30px; /* Ensure logos are 30px on small screens */
+    height: 30px;
+    object-fit: cover;
+}
+header {
+    background: #222;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+ol li{
+    list-style-type: circle;
+    
+
+    
+}
+ol {
+    list-style-position: inside; /* Keep numbers visible */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display items inline */
+    flex-direction: row-reverse; /* Reverse the order */
+    gap: 10px; /* Add spacing between items */
+  }
+  
+ 
