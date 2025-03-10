@@ -1,39 +1,41 @@
-// Function to scroll to a specific section
-function scrollToSection(sectionId) {
-    // Change the hash in the URL to the ID of the section
-    window.location.hash = sectionId;
-
-    // Scroll to the section with a smooth animation
-    document.querySelector(sectionId).scrollIntoView({
-        behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll("nav ul li a").forEach(anchor => {
+        anchor.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
     });
-}
 
-// Add event listeners to the buttons for navigation
-document.getElementById('next-education').addEventListener('click', function() {
-    scrollToSection('#projects-publications');
-});
+    // Button Click Events
+    document.querySelectorAll("button").forEach(button => {
+        button.addEventListener("click", function() {
+            if (this.id === "Next") {
+                window.scrollBy({
+                    top: window.innerHeight,
+                    behavior: "smooth"
+                });
+            } else if (this.id === "Go Back") {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 
-document.getElementById('go-back-projects').addEventListener('click', function() {
-    scrollToSection('#education');
-});
-
-document.getElementById('go-back-academic').addEventListener('click', function() {
-    scrollToSection('#projects-publications');
-});
-
-document.getElementById('next-experience').addEventListener('click', function() {
-    scrollToSection('#contact-details');
-});
-
-document.getElementById('go-home').addEventListener('click', function() {
-    scrollToSection('#home');
-});
-
-// Optional: To keep the page from reloading when clicking the links in the navigation
-document.querySelectorAll('nav a').forEach(function(anchor) {
-    anchor.addEventListener('click', function(event) {
-        event.preventDefault();
-        scrollToSection(this.getAttribute('href'));
+    // Fix broken external links
+    document.querySelectorAll("a[target='_main']").forEach(link => {
+        if (!link.href.startsWith("http")) {
+            link.href = "https://" + link.href;
+        }
     });
 });

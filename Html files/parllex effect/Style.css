@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* General Table Styling */
 table {
     width: 100%; /* Make the table take up the entire container width */
@@ -46,7 +47,7 @@ caption {
     margin-bottom: 10px;
 }
 
-
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
@@ -54,17 +55,19 @@ body {
 
 /* Parallax Section Styling */
 .parallax-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(7, 7, 7);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    position: relative; /* Ensures proper positioning for child elements */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Enables flexbox for centering */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Centers text inside */
+    color: rgb(7, 7, 7); /* Sets text color */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-size: cover; /* Ensures background covers entire section */
+    background-position: center; /* Centers background image */
+    background-attachment: fixed; /* Creates parallax scrolling effect */
+    transition: background-position 0.5s ease; /* Smooth transition for background movement */
 }
 
 /* Dark overlay for better text visibility */
@@ -96,7 +99,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover Effect */
+/* Hover Effect for Social Media Logos */
 .content img:hover {
     transform: scale(1.1);
 }
@@ -123,11 +126,27 @@ button {
 button:hover {
     background: #cc7700;
 }
-img {
-    width: 30px; /* Ensure logos are 30px on small screens */
-    height: 30px;
-    object-fit: cover;
+
+/* Image Container */
+.image-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
 }
+
+.image-container img {
+    border: 2px solid #050505;
+    border-radius: 5px;
+    width: 400px;  /* Set fixed width for image */
+    height: 300px; /* Maintain aspect ratio */
+    margin: 50px; /* Space around image */
+    vertical-align: middle; /* Align image properly */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Header Styling */
 header {
     background: #222;
     padding: 15px 0;
@@ -139,6 +158,7 @@ header {
     z-index: 1000;
 }
 
+/* Navigation Bar */
 nav ul {
     list-style: none;
     display: flex;
@@ -161,22 +181,53 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff9900;
+    color: #290000;
 }
 
-ol li{
-    list-style-type: circle;
-    
-
-    
-}
+/* Ordered List Styling */
 ol {
-    list-style-position: inside; /* Keep numbers visible */
+    list-style: none; /* Remove default list numbering */
     padding: 0;
     margin: 0;
-    display: flex; /* Display items inline */
+    display: flex; /* Display list items inline */
     flex-direction: row-reverse; /* Reverse the order */
     gap: 10px; /* Add spacing between items */
-  }
-  
- 
+}
+
+/* Specific Styling for List Items */
+ol li {
+    list-style-type: none;
+    padding: 5px 10px;
+    background-color: #f4f4f4; /* Light background for each item */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for items */
+}
+
+/* Custom Styling for Ordered List Numbers */
+ol li::before {
+    content: counter(item) ". "; /* Adds a period after the number */
+    counter-increment: item; /* Increment the counter for each list item */
+    font-weight: bold; /* Make the number bold */
+    color: #ff9900; /* Change number color */
+}
+
+ol li a {
+    color: #4CAF50; /* Link color in the list */
+    text-decoration: none; /* Remove underline */
+}
+
+ol li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Parallax Section - Mobile Adjustments */
+@media (max-width: 768px) {
+    .parallax-section {
+        height: 80vh; /* Adjust for smaller screens */
+    }
+
+    .content img {
+        width: 30px; /* Ensure logos are 30px on small screens */
+        height: 30px;
+    }
+}
