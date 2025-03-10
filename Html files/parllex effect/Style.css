@@ -110,6 +110,12 @@ body {
     text-decoration: none;
     font-weight: bold;
     margin-left: 10px;
+    pointer-events: auto; /* Ensure links are clickable */
+}
+
+/* Hover Effect for Social Media Links */
+.content a:hover {
+    color: #ff9900; /* Hover color */
 }
 
 /* Buttons */
@@ -230,4 +236,34 @@ ol li a:hover {
         width: 30px; /* Ensure logos are 30px on small screens */
         height: 30px;
     }
+
+    /* Responsive Navigation Bar */
+    nav ul {
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    nav ul li {
+        padding: 10px;
+    }
+
+    /* Adjust Ordered List Styling for Mobile */
+    ol {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+}
+
+/* Ensure Links are Clickable - Fix Overlap Issues */
+a {
+    pointer-events: auto;
+}
+
+/* Ensure Section Has Background on 4th Page */
+.parallax-section {
+    background-image: url('your-image-path.jpg'); /* Add background image path */
+    background-color: #333; /* Solid color fallback for the background */
+}
+
+/* For Links and Navigation Bar */
+nav ul li a {
+    pointer-events: auto;
 }
