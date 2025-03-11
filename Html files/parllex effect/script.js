@@ -19,11 +19,19 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll("button").forEach(button => {
         button.addEventListener("click", function() {
             if (this.id === "Next") {
+                // Scroll down to the next section
                 window.scrollBy({
                     top: window.innerHeight,
                     behavior: "smooth"
                 });
             } else if (this.id === "Go Back") {
+                // Scroll up to the previous section
+                window.scrollBy({
+                    top: -window.innerHeight,
+                    behavior: "smooth"
+                });
+            } else if (this.id === "Go Home") {
+                // Scroll to the top of the page
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
@@ -31,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+    
 
     // Fix broken external links
     document.querySelectorAll("a[target='_main']").forEach(link => {
